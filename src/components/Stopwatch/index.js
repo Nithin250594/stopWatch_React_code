@@ -33,10 +33,9 @@ class Stopwatch extends Component {
   startTimer = () => {
     const {timeRunning} = this.state
 
-    if (timeRunning === true) {
-      this.clearTimeInterval()
-    } else {
+    if (timeRunning === false) {
       this.intervalId = setInterval(this.incrementTime, 1000)
+      this.setState({timeRunning: true})
     }
   }
 
